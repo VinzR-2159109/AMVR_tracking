@@ -96,14 +96,6 @@ ENV/
 .dmypy.json
 dmypy.json
 
-# OpenCV/Video/Image files
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.mp4
-*.avi
-
 # VSCode settings
 .vscode/
 
