@@ -34,6 +34,11 @@ class FeatureBasedAROverlay:
         return augmented_frame
 
     def run(self):
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+        fps = 30.0
+        frame_size = (int(self.cap.get(3)), int(self.cap.get(4))) 
+        out = cv2.VideoWriter('output_FeatureAROverlay_SIFT.mp4', fourcc, fps, frame_size)
+
         while True:
             ret, frame = self.cap.read()
             if not ret:
@@ -60,11 +65,13 @@ class FeatureBasedAROverlay:
 
             # Display the augmented frame
             cv2.imshow('Augmented Reality Output', frame)
+            out.write(frame)
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
 
         self.cap.release()
+        out.release()
         cv2.destroyAllWindows()
 
 
