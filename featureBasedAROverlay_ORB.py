@@ -37,7 +37,7 @@ class FeatureBasedAROverlay:
         fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         fps = 30.0
         frame_size = (int(self.cap.get(3)), int(self.cap.get(4))) 
-        out = cv2.VideoWriter('output_ArucoAROverlay_Orb.mp4', fourcc, fps, frame_size)
+        out = cv2.VideoWriter('output_FeatureAROverlay_ORB.mp4', fourcc, fps, frame_size)
     
         while True:
             ret, frame = self.cap.read()
